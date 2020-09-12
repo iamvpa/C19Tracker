@@ -101,6 +101,50 @@ class HomeScreen extends StatelessWidget {
             child: Row(
               children: <Widget>[
                 SvgPicture.asset("assets\icons\maps-and-flags.svg"),
+                SizedBox(width: 20),
+                Expanded(
+                  child: DropdownButton(
+                    isExpanded: true,
+                    underline: SizedBox(),
+                    icon: SvgPicture.asset("assets\icons\dropdown.svg"),
+                    value: "India",
+                    items: [
+                      'India',
+                      'Indonesia',
+                      'Bangladesh',
+                      'United States',
+                      'Japan'
+                    ].map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                    onChanged: (value) {},
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    RichText(
+                      text: TextSpan(
+                        children: [
+                          TextSpan(text: "Case Update", style: kTitleTextstyle),
+                          TextSpan(
+                            text: "Newest update March 28",
+                            style: TextStyle(color: kTextLightColor),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                )
               ],
             ),
           )
