@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
               color: kBodyTextColor,
             ),
           )),
-      home: InfoScreen(),
+      home: HomeScreen(),
     );
   }
 }
